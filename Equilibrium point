@@ -1,0 +1,35 @@
+Given an array A your task is to tell at which position the equilibrium first occurs in the array. 
+Equilibrium position in an array is a position such that the sum of elements below it is equal to the sum of elements after it.
+
+def check(list1,num):
+    sum_left=0
+    sum_right=0
+    out=[]
+    left=0
+    right=num+1
+    while left<num:
+        sum_left+=list1[left]
+        left+=1
+    while right<len(list1):
+        sum_right+=list1[right]
+        right+=1
+    out.append(sum_left)
+    out.append(sum_right)
+    return out
+for case in range(int(input())):
+    flag=0
+    leg=int(input())
+    list2=list(map(int,input().split()))
+    for i in range(len(list2)):
+        returned=check(list2,i)
+        if int(returned[0])==int(returned[1]):
+            print("value is=")
+            print(i+1)
+            flag=1
+            break
+        else:
+            pass
+            #print("else="+str(i))
+            #print("flag="+str(flag))
+    if flag==0:
+        print(-1)
