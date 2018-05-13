@@ -1,0 +1,30 @@
+""""Write a program to find the majority element in the array.
+A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element).
+If input array doesn't contain a majority element, then output "NO Majority Element""""
+
+"""Example:
+Input:
+
+2
+5
+3 1 3 3 2
+3
+1 2 3
+Output:
+3
+NO Majority Element"""
+
+for case in range(int(input())):
+    size=int(input())
+    out=-1
+    list1=list(map(int,input().split()))
+    for i in list1:
+        if list1.count(i)>int(size/2):
+            out=i
+            break
+        else:
+            pass
+    if out==-1:
+        print("NO Majority Element")
+    else:
+        print(out)
