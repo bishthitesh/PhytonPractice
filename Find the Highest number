@@ -1,0 +1,29 @@
+"""
+Given an array in such a way that the elements stored in array are in increasing order initially and then after reaching to a peak element, 
+elements stored are in decreasing order. 
+Find the highest element.
+"""
+"""
+Example:
+Input:
+2
+11
+1 2 3 4 5 6 5 4 3 2 1
+9
+1 3 4 5 7 8 9 5 2 
+
+Output:
+6
+9"""
+for case in range(int(input())):
+    n=int(input())
+    list1=list(map(int,input().split()))
+    out=list1[-1]
+    for i in range(1,len(list1)):
+        #print(out)
+        if list1[i-1]>list1[i]:
+            out=list1[i-1]
+            break
+        else:
+            pass
+    print(out)
