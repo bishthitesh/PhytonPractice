@@ -1,0 +1,49 @@
+"""
+Given an odd number in the form of string, 
+the task is to make largest even number possible from the given number provided one is allowed to do only one swap operation, 
+if no such number is possible then print the input string itself.
+"""
+"""
+Input:
+3
+789
+536425
+1356425
+Output:
+798
+536524
+1356524
+"""
+
+for case in range(int(input())):
+    str1=input()
+    list1=[int(i) for i in str1]
+    #print(list1)
+    flag=0
+    flag1=0
+    out=str1
+    for index,i in enumerate(list1):
+        if i%2==0:
+            if i<list1[-1]:
+                temp=list1[-1]
+                list1[-1]=i
+                list1[index]=temp
+                flag=1
+                break
+            else:
+                test=[int(i) for i in str1]
+                temp=test[-1]
+                test[-1]=i
+                test[index]=temp
+                test_val=int("".join(list(map(str,test))))
+                if test_val>flag1:
+                    flag1=test_val
+                    continue
+            
+        else:
+            pass
+    if flag==1:
+        out="".join(list(map(str,list1)))
+    elif flag1:
+        out=test_val
+    print(out)
