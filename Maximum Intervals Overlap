@@ -1,0 +1,45 @@
+"""
+Consider a big party where a log register for guest’s entry and exit times is maintained. 
+Find the time at which there are maximum guests in the party. Note that entries in register are not in any order."""
+
+"""
+Input:
+2
+5
+1 2 10 5 5
+4 5 12 9 12
+7
+13 28 29 14 40 17 3 
+107 95 111 105 70 127 74 
+
+Output:
+3 5
+7 40
+"""
+
+for case in range(int(input())):
+    length=int(input())
+    inside=list(map(int,input().split()))
+    outside=list(map(int,input().split()))
+    maximum=0
+    out=[]
+    for i in range(min(inside),max(outside)):
+        current=0
+        for j in inside:
+            if i>=j:
+                current+=1
+            else:pass
+        for k in outside:
+            if i>k:
+                current-=1
+            else:pass
+        if current>maximum:
+            maximum=current
+            val=i
+        else:
+            pass
+        #print("i="+str(i))
+        #print("max="+str(maximum))
+    out.append(str(maximum))
+    out.append(str(val))
+    print(" ".join(out))
