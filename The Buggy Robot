@@ -1,0 +1,15 @@
+"""
+Ishaan recently made a robot which reduces him effort to move things. 
+The robot moves from one place to another in a straight line to move things, but it has got a bug in it.
+After moving N metres forward, it comes back M meters. 
+Now Ishaan wants to know how much total distance does the robot cover if it needs to reach K metres from the starting point
+"""
+for case in range(0,int(input())):
+    n,m,k=list(map(int,input().split()))
+    Reaches=0
+    Distance=0
+    while(Reaches+n<k):
+        Reaches+=(n-m)
+        Distance+=(n+m)
+    rem=k-Reaches
+    print(Distance+rem)
