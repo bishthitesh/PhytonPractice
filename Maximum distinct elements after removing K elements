@@ -1,0 +1,15 @@
+"""
+Given an array containing N elements. 
+The task is to find maximum number of distinct elements after removing K elements from the array.
+"""
+for case in range(int(input())):
+    n,k=list(map(int,input().split()))
+    list1=list(input().split())
+    distinct=len(set(list1))
+    remaining=n-k
+    output=0
+    if remaining>=distinct:
+        output=distinct
+    else:
+        output=remaining
+    print(output)
