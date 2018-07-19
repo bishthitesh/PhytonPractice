@@ -1,0 +1,13 @@
+ip_array=list(map(int,input().split()))
+i=1
+for i in range(len(ip_array)):
+    current_min_index=i
+    for j in range(i+1,len(ip_array)):
+        if ip_array[j]<ip_array[current_min_index]:
+            current_min_index=j
+    #print("current index value="+str(ip_array[i]))
+    #print("minimum value="+str(ip_array[current_min_index]))
+    temp=ip_array[i]
+    ip_array[i]=ip_array[current_min_index]
+    ip_array[current_min_index]=temp
+print(ip_array)    
