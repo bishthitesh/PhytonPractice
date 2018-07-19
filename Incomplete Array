@@ -1,0 +1,42 @@
+""""You are given an array of size N. Two variables A and B are defined as minimum and maximum in the array respectively. 
+Your task is to find how many number should be added to the given array such that all the element in the range [A,B] occurs 
+atleast once in the array.
+Example:
+Input
+2
+5
+4 5 3 8 6
+3
+2 1 3
+
+Output
+1
+0
+"""
+
+for _ in range(int(input())):
+    n=int(input())
+    arr1=list(sorted(list(map(int,input().split()))))
+    #print(arr1)
+    current=arr1[0]
+    last=arr1[-1]
+    count=0
+    index=1
+    while(current<last):
+        #print("current="+str(current))
+        nex=arr1[index]
+        #print("next="+str(nex))
+        """if nex!=current+1:
+            count+=1
+            current=current+1
+        else:
+            current=nex
+            index+=1"""
+        if nex==current or nex==current+1:
+            current=nex
+            index+=1
+        else:
+            count+=1
+            current=current+1
+        #print("count="+str(count))
+    print(count)
