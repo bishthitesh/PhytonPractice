@@ -1,0 +1,13 @@
+"""
+Write a function rotate(ar[], d, n) that rotates arr[] of size n by d elements.
+"""
+rotate_by=int(input())
+x=list(map(int,input().split()))
+for i in range(rotate_by):
+    first=x[0]
+    for j in range(1,len(x)):
+        x[j-1]=x[j]
+    x[len(x)-1]=first
+print(x)
+
+ 
